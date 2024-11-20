@@ -3,7 +3,6 @@ dataset_type: journal-article
 about: A reimplementation of the default CKAN dataset schema for journal articles
 about_url: https://github.com/fpichardom/ckan_modified_schemas
 
-
 dataset_fields:
 
 # our id + name fields are uuids and always equal

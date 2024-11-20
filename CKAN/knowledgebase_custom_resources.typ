@@ -1,6 +1,6 @@
 = Custom Digitization resources types for Knowledge base
 
-Digitization resources or resources that would be useful for digitization projects can be of different formats with their own needs of metadata. Here I want to develop the vocabulary that would be then used for customizing form fields depending on the digitization resource type.
+Digitization resources, or general resources that would be useful for digitization projects can be of different formats with their own needs for metadata. Here I want to develop the vocabulary that would be then used for customizing form fields depending on the digitization resource type.
 
 categories:
 - journal-article: Publication from a scientific journal.
@@ -32,7 +32,7 @@ categories:
     - project design and management
     - digitization general
   ],
-  table.cell(colspan: 2, align: left)[Description: ]
+  table.cell(colspan: 2, align: left)[Description: Task clusters defined for biodiversity specimens digitization projects by #link("https://doi.org/10.3897/zookeys.209.3135")[Nelson, et al. (2012)]]
 )
 
 #table(
@@ -50,6 +50,25 @@ categories:
     - quality control
   ],
   table.cell(colspan: 2, align: left)[Description: ]
+)
+
+#table(
+  columns: (auto, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*preparations*]
+  ),
+  [ckan_default], [false],
+  [label],[Preparations],
+  [standard_mapping], [dwc:preparations],
+  [number_of_values_allowed],[multiple],
+  [example], [],
+  [options],[
+    - herbarium sheet
+    
+    - label imaging
+    - quality control
+  ],
+  table.cell(colspan: 2, align: left)[Description: Resource useful for specific types of methods of preparation ]
 )
 
 == Journal-Article
@@ -103,7 +122,7 @@ categories:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
-
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -115,6 +134,7 @@ categories:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
 #table(
   columns: (1fr, 1fr),
