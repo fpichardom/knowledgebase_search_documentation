@@ -13,13 +13,13 @@ dataset_fields:
   label: Title
   preset: title
   display_property: dc.title
-  form_placeholder: eg. A descriptive title
+  form_placeholder: eg. Five task clusters that enable efficient and effective digitization of biological collections
   required: True
 
 - field_name: url
   label: Source
-  form_placeholder: http://example.com/
-  display_property: foaf:homepage
+  form_placeholder: e.g., https://zookeys.pensoft.net/articles.php?id=2926
+  display_property: schema:url
   display_snippet: link.html
   required: True
 
@@ -49,10 +49,12 @@ dataset_fields:
 
 - field_name: journal
   label: Journal
+  display_property: schema:publishedBy
   required: True
 
 - field_name: volume
   label: Volume
+  display_property: schema:volumeNumber
   validators: int_validator
 
 - field_name: issue
@@ -108,9 +110,12 @@ dataset_fields:
   - value: quality control
     label: Quality Control
 
-- field_name: collection_type
+- field_name: preparations
   label: Collection type
   preset: select
+  display_property: dwc:preparations
+  form_placeholder: flat sheets and packets
+  help_text: see dwc:preparations (http://rs.tdwg.org/dwc/terms/preparations)
   choices:
   - value: flat sheets and packets
     label: Flat Sheets and Packets

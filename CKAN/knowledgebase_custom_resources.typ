@@ -1,6 +1,11 @@
 = Custom Digitization resources types for Knowledge base
 
-Digitization resources, or general resources that would be useful for digitization projects can be of different formats with their own needs for metadata. Here I want to develop the vocabulary that would be then used for customizing form fields depending on the digitization resource type.
+Digitization resources, or general resources useful for digitization projects, #underline[appear in different formats]. Each format has their own metadata requirements. Here, I propose a set of standardized terms to used to customize form fields based on the type of digitization resource. These will attempt to use standard vocabulary from naming standards as much as possible such as:
+
+- #link("https://www.dublincore.org/")[Dublin Core]
+- #link("https://dwc.tdwg.org/")[Darwin Core]
+- #link("https://schema.org/")[Schema.org]
+
 
 categories:
 - journal-article: Publication from a scientific journal.
@@ -94,7 +99,7 @@ categories:
   ),
   [ckan_default], [true],
   [label], [Source],
-  [standard mapping], [foaf: homepage],
+  [standard mapping], [schema:url | foaf: homepage],
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
@@ -155,7 +160,7 @@ categories:
   ),
   [ckan_default], [false],
   [label], [Journal],
-  [standard mapping], [],
+  [standard mapping], [#link("https://schema.org/publishedBy")[schema:publishedBy]],
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
  )
@@ -167,19 +172,7 @@ categories:
   ),
   [ckan_default], [false],
   [label], [Volume],
-  [standard mapping], [],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*volume*]
-  ),
-  [ckan_default], [false],
-  [label], [Volume],
-  [standard mapping], [],
+  [standard mapping], [#link("https://schema.org/volumeNumber")[schema:volumeNumber]],
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
@@ -191,11 +184,34 @@ categories:
   ),
   [ckan_default], [false],
   [label], [Issue],
-  [standard mapping], [],
-  [example], [],
+  [standard mapping], [#link("https://schema.org/issueNumber")[schema:issueNumber]],
+  [example], [2],
    table.cell(colspan: 2, align: left)[Description: ]
 )
 
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*year*]
+  ),
+  [ckan_default], [false],
+  [label], [Year],
+  [standard mapping], [#link("https://schema.org/datePublished")[schema:datePublished]],
+  [example], [2012],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*pages*]
+  ),
+  [ckan_default], [false],
+  [label], [Pages],
+  [standard mapping], [#link("https://schema.org/pagination")[schema:pagination]],
+  [example], [1-5],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
 
 
 === Yaml Schema for journal-article
