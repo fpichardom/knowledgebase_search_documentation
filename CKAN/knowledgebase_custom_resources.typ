@@ -10,8 +10,13 @@ Digitization resources, or general resources useful for digitization projects, #
 categories:
 - journal-article: Publication from a scientific journal.
 - web-reference: General web resource that provides information of interest. This would be general enough for entries like blog article, documentation, guides. These can have a specific article or only have links to organizations.
+- presentation-slides: presentation slides that have been hosted by an organization or author (not links to google slides, for example).
+- online-training: online material that it is meant to teach in a structured way or provide certification
+- publication: generic publication type. It requires an author, that is not an organization, and date of publication
+
+
 - resource-hub
-- publication: generic publication type. It requires an author and date of publication
+
 - equipment
 - software
 
