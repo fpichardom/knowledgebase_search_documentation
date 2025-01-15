@@ -67,8 +67,8 @@ Field prefixes:
 *Categories:*
 
 - *journal-article*: Publication from a scientific journal.
-- *publication*: generic publication type. It requires an author, that is not an organization, and date of publication
-- *web-content*: Online reference material and documentation. Typically curated by an organization. URls are the main identifiers, the document is subject to evolve with time. This would be general enough for resources in the form of blogs, documentation, wiki, etc.
+- *publication-general*: generic publication type. It requires an author, that is not an organization, and date of publication
+- *web-resource*: Online reference material and documentation. Typically curated by an organization. URls are the main identifiers, the document is subject to evolve with time. This would be general enough for resources in the form of blogs, documentation, wiki, etc.
 - *presentation-slides*: presentation slides that have been hosted by an organization or author (not links to google slides, for example).
 - *online-training*: online material that it is meant to teach in a structured way or provide certification
 - *resource-hub*
@@ -194,6 +194,7 @@ Field prefixes:
 
 === Fields:
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -205,7 +206,9 @@ Field prefixes:
   [example], [],
   table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -217,7 +220,9 @@ Field prefixes:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -229,7 +234,9 @@ Field prefixes:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -241,6 +248,8 @@ Field prefixes:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
+
 #block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
@@ -248,13 +257,14 @@ Field prefixes:
     table.cell(colspan: 2, align: center)[*author_email*]
   ),
   [ckan_default], [true],
-  [label], [Author],
+  [label], [Author Email],
   [standard mapping], [dc:creator:email],
   [example], [],
   table.cell(colspan: 2, align: left)[Description: ]
 )
 ]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -266,7 +276,9 @@ Field prefixes:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -278,7 +290,9 @@ Field prefixes:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
  )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -290,7 +304,9 @@ Field prefixes:
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -302,7 +318,9 @@ Field prefixes:
   [example], [2],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -314,7 +332,9 @@ Field prefixes:
   [example], [2012],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -326,7 +346,7 @@ Field prefixes:
   [example], [1-5],
    table.cell(colspan: 2, align: left)[Description: ]
 )
-
+]
 
 // === Yaml Schema for journal-article
 
@@ -336,151 +356,12 @@ Field prefixes:
 //   lang:"yaml"
 // )
 
-== Journal-Article
-
-Alternative Names: scholarly-article
-
-=== Fields:
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*title*]
-  ),
-  [ckan_default], [true],
-  [label],[Title],
-  [standard_map], [dc: title],
-  [example], [],
-  table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*url*]
-  ),
-  [ckan_default], [true],
-  [label], [Source],
-  [standard mapping], [schema:url | foaf: homepage],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*doi*]
-  ),
-  [ckan_default], [false],
-  [label], [DOI],
-  [standard mapping], [dc:identifier:doi],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*author*]
-  ),
-  [ckan_default], [true],
-  [label], [Author],
-  [standard mapping], [dc:creator],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*author_email*]
-  ),
-  [ckan_default], [true],
-  [label], [Author],
-  [standard mapping], [dc:creator:email],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-]
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*other_authors*]
-  ),
-  [ckan_default], [false],
-  [label], [Other Authors],
-  [standard mapping], [dc:creator],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*journal*]
-  ),
-  [ckan_default], [false],
-  [label], [Journal],
-  [standard mapping], [#link("https://schema.org/publishedBy")[schema:publishedBy]],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
- )
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*volume*]
-  ),
-  [ckan_default], [false],
-  [label], [Volume],
-  [standard mapping], [#link("https://schema.org/volumeNumber")[schema:volumeNumber]],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*issue*]
-  ),
-  [ckan_default], [false],
-  [label], [Issue],
-  [standard mapping], [#link("https://schema.org/issueNumber")[schema:issueNumber]],
-  [example], [2],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*year*]
-  ),
-  [ckan_default], [false],
-  [label], [Year],
-  [standard mapping], [#link("https://schema.org/datePublished")[schema:datePublished]],
-  [example], [2012],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*pages*]
-  ),
-  [ckan_default], [false],
-  [label], [Pages],
-  [standard mapping], [#link("https://schema.org/pagination")[schema:pagination]],
-  [example], [1-5],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-
 == Web-Resource
-Alternative Names: web-reference
+Alternative Names: web-reference, web-content, website, webpage
 
 === Fields:
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -492,7 +373,9 @@ Alternative Names: web-reference
   [example], [],
   table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -504,19 +387,23 @@ Alternative Names: web-reference
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
-    table.cell(colspan: 2, align: center)[*doi*]
+    table.cell(colspan: 2, align: center)[*archived_at*]
   ),
   [ckan_default], [false],
-  [label], [DOI],
-  [standard mapping], [dc:identifier:doi],
+  [label], [Archived At],
+  [standard mapping], [schema:archivedAT],
   [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
+   table.cell(colspan: 2, align: left)[Description: URL for permanent archival of resource]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -528,6 +415,8 @@ Alternative Names: web-reference
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
+
 #block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
@@ -535,13 +424,14 @@ Alternative Names: web-reference
     table.cell(colspan: 2, align: center)[*author_email*]
   ),
   [ckan_default], [true],
-  [label], [Author],
+  [label], [Author Email],
   [standard mapping], [dc:creator:email],
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
 ]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
@@ -553,63 +443,429 @@ Alternative Names: web-reference
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
-    table.cell(colspan: 2, align: center)[*journal*]
+    table.cell(colspan: 2, align: center)[*date_published*]
   ),
   [ckan_default], [false],
-  [label], [Journal],
-  [standard mapping], [#link("https://schema.org/publishedBy")[schema:publishedBy]],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
- )
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*volume*]
-  ),
-  [ckan_default], [false],
-  [label], [Volume],
-  [standard mapping], [#link("https://schema.org/volumeNumber")[schema:volumeNumber]],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*issue*]
-  ),
-  [ckan_default], [false],
-  [label], [Issue],
-  [standard mapping], [#link("https://schema.org/issueNumber")[schema:issueNumber]],
-  [example], [2],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*year*]
-  ),
-  [ckan_default], [false],
-  [label], [Year],
+  [label], [Date Published],
   [standard mapping], [#link("https://schema.org/datePublished")[schema:datePublished]],
   [example], [2012],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
 
+#block(breakable: false)[
 #table(
   columns: (1fr, 1fr),
   table.header(
-    table.cell(colspan: 2, align: center)[*pages*]
+    table.cell(colspan: 2, align: center)[*version*]
   ),
-  [ckan_default], [false],
-  [label], [Pages],
-  [standard mapping], [#link("https://schema.org/pagination")[schema:pagination]],
+  [ckan_default], [true],
+  [label], [Version],
+  [standard mapping], [#link("https://schema.org/pagination")[schema:version]],
   [example], [1-5],
    table.cell(colspan: 2, align: left)[Description: ]
 )
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*copyright_holder*]
+  ),
+  [ckan_default], [false],
+  [label], [Copyright Holder],
+  [standard mapping], [#link("https://schema.org/datePublished")[schema:copyrightHolder]],
+  [example], [Symbiota],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*owner_org*]
+  ),
+  [ckan_default], [true],
+  [label], [Organization],
+  [standard mapping], [],
+  [example], [Symbiota],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*licence_id*]
+  ),
+  [ckan_default], [true],
+  [label], [Licence],
+  [standard mapping], [],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*maintainer*]
+  ),
+  [ckan_default], [true],
+  [label], [Maintainer],
+  [standard mapping], [dc:contributor],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*maintainer_email*]
+  ),
+  [ckan_default], [true],
+  [label], [Maintainer Email],
+  [standard mapping], [dc:contributor:email],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*notes*]
+  ),
+  [ckan_default], [true],
+  [label], [Description],
+  [standard mapping], [schema:abstract],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*category*]
+  ),
+  [ckan_default], [false],
+  [label], [Description],
+  [standard mapping], [schema:category],
+  [example], [],
+  [options], [
+    - protocol
+    - documentation
+    - guide
+    - blog
+  ],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+
+== Learning-Resource
+Alternative Names: web-reference, web-content, website, webpage
+
+=== Fields:
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*title*]
+  ),
+  [ckan_default], [true],
+  [label],[Title],
+  [standard_map], [dc: title],
+  [example], [],
+  table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*url*]
+  ),
+  [ckan_default], [true],
+  [label], [Source],
+  [standard mapping], [schema:url | foaf: homepage],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*archived_at*]
+  ),
+  [ckan_default], [false],
+  [label], [Archived At],
+  [standard mapping], [schema:archivedAT],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: URL for permanent archival of resource]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*author*]
+  ),
+  [ckan_default], [true],
+  [label], [Author],
+  [standard mapping], [dc:creator],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*author_email*]
+  ),
+  [ckan_default], [true],
+  [label], [Author Email],
+  [standard mapping], [dc:creator:email],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*other_authors*]
+  ),
+  [ckan_default], [false],
+  [label], [Other Authors],
+  [standard mapping], [dc:creator],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*date_published*]
+  ),
+  [ckan_default], [false],
+  [label], [Date Published],
+  [standard mapping], [#link("https://schema.org/datePublished")[schema:datePublished]],
+  [example], [2012],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*version*]
+  ),
+  [ckan_default], [true],
+  [label], [Version],
+  [standard mapping], [#link("https://schema.org/pagination")[schema:version]],
+  [example], [1-5],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*time_required*]
+  ),
+  [ckan_default], [false],
+  [label], [Time Required],
+  [standard mapping], [#link("https://schema.org/datePublished")[lrmi:timeRequired]],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*learning_mode*]
+  ),
+  [ckan_default], [false],
+  [label], [Learning Mode],
+  [standard mapping], [#link("https://schema.org/datePublished")[schema:courseMode]],
+  [example], [],
+  [options], [
+    - syncronous
+    - asyncronous
+    - mixed syncronous-asyncronous
+    - requires registration
+  ],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*repeat_frequency*]
+  ),
+  [ckan_default], [false],
+  [label], [Repeat Frequency],
+  [standard mapping], [#link("https://schema.org/datePublished")[schema:repeatFrequency]],
+  [example], [],
+  [options], [
+    - on demand
+    - self-paced
+    - scheduled
+  ],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*is_accessible_for_free*]
+  ),
+  [ckan_default], [false],
+  [label], [Is Accessible for Free],
+  [standard mapping], [#link("https://schema.org/datePublished")[schema:isAccessibleForFree]],
+  [example], [],
+  [options], [
+    - true
+    - false
+  ],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*copyright_holder*]
+  ),
+  [ckan_default], [false],
+  [label], [Copyright Holder],
+  [standard mapping], [#link("https://schema.org/datePublished")[schema:copyrightHolder]],
+  [example], [Symbiota],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*owner_org*]
+  ),
+  [ckan_default], [true],
+  [label], [Organization],
+  [standard mapping], [],
+  [example], [Symbiota],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*licence_id*]
+  ),
+  [ckan_default], [true],
+  [label], [Licence],
+  [standard mapping], [],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*maintainer*]
+  ),
+  [ckan_default], [true],
+  [label], [Maintainer],
+  [standard mapping], [dc:contributor],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*maintainer_email*]
+  ),
+  [ckan_default], [true],
+  [label], [Maintainer Email],
+  [standard mapping], [dc:contributor:email],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*notes*]
+  ),
+  [ckan_default], [true],
+  [label], [Description],
+  [standard mapping], [schema:abstract],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*category*]
+  ),
+  [ckan_default], [false],
+  [label], [Description],
+  [standard mapping], [schema:category],
+  [example], [],
+  [options], [
+    - workshop
+    - documentation
+    - guide
+    - blog
+  ],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
