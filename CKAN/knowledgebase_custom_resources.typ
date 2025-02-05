@@ -93,8 +93,8 @@ Field prefixes:
 *Categories:*
 
 - *scholarly-article*: Publication in a journal or publishing organization which has an author, specific publishing date and a resolvable persistent identifier such as a DOI. It could also have versions.
-  - peer-reviewed article
-  - non peer-reviewed article
+  - peer-reviewed
+  - non peer-reviewed
 
 - *web-content*: a webpage that serves as a reference material. Typically curated by an organization but can also be attributed to particular authors. URls are the main identifiers and the document is subject to evolve with time. This would be general enough for resources in the form of blog articles, documentation, wiki articles, etc.
   - guide: descriptive information on how to tackle specific scenarios or providing general overview of a particular topic.
@@ -112,7 +112,8 @@ Field prefixes:
 - *discussion-forum*:
 - *discussion-forum-posting*
 - *event* (#link("https://schema.org/Event")[schema:Event]): event happening in a particular time and place
-== CKAN Default fields (User input)
+
+== CKAN Default fields
 
 #block(breakable: false, below: 2em)[
 #table(
@@ -165,8 +166,8 @@ Field prefixes:
     #link("https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/creator/")[dc:creator],
     #link("https://schema.org/creator")[schema:creator],
     #link("https://schema.org/author")[schema:author]
-    
   ],
+  [field_type],[text],
   [example], [],
    table.cell(colspan: 2, align: left)[
      Description: First author as written in the resource 
@@ -184,6 +185,7 @@ Field prefixes:
   [label], [First Author Email],
   [alternative_name],[],
   [standard mapping], [dc:creator:email],
+  [field_type],[text],
   [example], [],
   table.cell(colspan: 2, align: left)[Description: ]
 )
@@ -214,6 +216,7 @@ Field prefixes:
   [ckan_default], [true],
   [label], [Organization],
   [standard mapping], [],
+  [field_type],[select],
   [example], [Symbiota],
    table.cell(colspan: 2, align: left)[Description: Organization hosting or maintaining the resource. Required field. ]
 )
@@ -403,13 +406,9 @@ Field prefixes:
 )
 ]
 
-== Scholarly-Article
+== Scholarly-Article #link("https://schema.org/ScholarlyArticle")[schema:scholarlyArticle]
 
-Basis:
-- schema:scholarlyArticle (https://schema.org/ScholarlyArticle)
-
-Alternative Names: 
-
+=== Alternative Names: 
 
 === Fields:
 
@@ -418,6 +417,7 @@ CKAN fields:
 - url
 - author
 - author_email
+- version
 - licence_id
 - notes
 
@@ -571,11 +571,11 @@ CKAN fields:
   [label], [Description],
   [],[],
   [standard mapping], [schema:category],
-  [field_type],[select],
+  [field_type],[select_multiple],
   [example], [],
   [options], [
-    - journal article
-    - conference abstract
+    - peer-reviewed
+    - non-peer-reviewed
   ],
    table.cell(colspan: 2, align: left)[Description: ]
 )
@@ -588,114 +588,6 @@ CKAN fields:
 //   lang:"yaml"
 // )
 
-
-== Publication-General
-
-=== Fields:
-
-CKAN fields:
-- title
-- url
-- author
-- author_email
-- licence_id
-- notes
-
-
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*doi*]
-  ),
-  [ckan_default], [false],
-  [label], [DOI],
-  [standard mapping], [dc:identifier:doi],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-]
-
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*isbn*]
-  ),
-  [ckan_default], [false],
-  [label], [DOI],
-  [standard mapping], [dc:identifier:isbn],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-]
-
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*other_authors*]
-  ),
-  [ckan_default], [false],
-  [label], [Other Authors],
-  [standard mapping], [
-    #link("https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/creator/")[dc:creator]
-  ],
-  [field_type],[multiple_text],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-]
-
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*publisher*]
-  ),
-  [ckan_default], [false],
-  [label], [Publisher],
-  [standard mapping], [schema:publisher],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: Organization in charge of publishing the resource ]
-)
-]
-
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*date_published*]
-  ),
-  [ckan_default], [false],
-  [label], [Date Published],
-  [standard mapping], [
-    #link("https://schema.org/datePublished")[schema:datePublished]
-  ],
-  [example], [2012],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-]
-
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*category*]
-  ),
-  [ckan_default], [false],
-  [label], [Description],
-  [standard mapping], [schema:category],
-  [example], [],
-  [options], [
-    - protocol
-    - guide
-    - conference paper
-    - presentation slides
-  ],
-   table.cell(colspan: 2, align: left)[Description: ]
-)
-]
 
 == Web-Content
 
