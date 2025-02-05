@@ -107,7 +107,7 @@ Field prefixes:
 
 - *?presentation-slides*: presentation slides that have been hosted by an organization or author (not links to google slides, for example).
   - Example:
-- *?video*: media of type video
+- * video*: media of type video
 - digital-document
 - *discussion-forum*:
 - *discussion-forum-posting*
@@ -589,9 +589,13 @@ CKAN fields:
 // )
 
 
-== Web-Content
+== Web-Content #link("https://schema.org/WebContent")[schema:WebContent]
 
-Alternative Names: web-reference, web-content, website, webpage
+=== Alternative Names:
+- web-reference
+- web-resource
+- website #link("https://schema.org/WebSite")[schema:WebSite]
+- webpage #link("https://schema.org/WebPage")[schema:WebPage]
 
 
 === Fields:
@@ -607,20 +611,6 @@ CKAN Fields:
 - maintainer
 - maintainer_email
 - notes
-
-#block(breakable: false)[
-#table(
-  columns: (1fr, 1fr),
-  table.header(
-    table.cell(colspan: 2, align: center)[*archived_at*]
-  ),
-  [ckan_default], [false],
-  [label], [Archived At],
-  [standard mapping], [schema:archivedAT],
-  [example], [],
-   table.cell(colspan: 2, align: left)[Description: URL for permanent archival of resource]
-)
-]
 
 
 #block(breakable: false)[
@@ -674,6 +664,23 @@ CKAN Fields:
 #table(
   columns: (1fr, 1fr),
   table.header(
+    table.cell(colspan: 2, align: center)[*archived_at*]
+  ),
+  [ckan_default], [false],
+  [label], [Archived At],
+  [standard mapping], [
+    #link("https://schema.org/archivedAt")[schema:archivedAT]
+  ],
+  [example], [],
+   table.cell(colspan: 2, align: left)[Description: URL for permanent archival of resource]
+)
+]
+
+
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
     table.cell(colspan: 2, align: center)[*category*]
   ),
   [ckan_default], [false],
@@ -682,7 +689,6 @@ CKAN Fields:
   [example], [],
   [options], [
     - protocol
-    - documentation
     - guide
     - blog
     - resource hub
@@ -700,16 +706,16 @@ CKAN Fields:
 === Fields:
 
 CKAN Fields:
-- title - Title
-- url - Source
-- author - First Author
-- author_email - First Author Email
-- version - Version
-- owner_org - Organization
-- licence_id - Licence ID
-- maintainer - Maintainer
-- maintainer_email - Maintainer Email
-- notes - Description
+- title
+- url
+- author
+- author_email
+- version
+- owner_org
+- licence_id
+- maintainer
+- maintainer_email
+- notes
 
 
 #block(breakable: false)[
@@ -767,7 +773,7 @@ CKAN Fields:
   ),
   [ckan_default], [false],
   [label], [End Date],
-  [standard mapping], [#link("https://schema.org/endDate")[schema:startDate]],
+  [standard mapping], [#link("https://schema.org/endDate")[schema:endDate]],
   [field_type],[date],
   [example], [2012-12-31],
    table.cell(colspan: 2, align: left)[Description: ]
@@ -867,8 +873,7 @@ CKAN Fields:
 
 
 
-== Video
-(https://schema.org/VideoObject)
+== Video #link("https://schema.org/VideoObject")[schema:VideoObject]
 
 === Fields:
 
@@ -885,8 +890,53 @@ CKAN Fields:
 - notes
 
 
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*start_time*]
+  ),
+  [ckan_default], [false],
+  [label], [Start Time],
+  [standard mapping], [#link("https://schema.org/startTime")[schema:startTime]],
+  [field_type],[time - in minutes],
+  [example], [12 min],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
 
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*end_time*]
+  ),
+  [ckan_default], [false],
+  [label], [End Date],
+  [standard mapping], [
+    #link("https://schema.org/endTime")[schema:endTime]
+  ],
+  [field_type],[time - in minutes],
+  [example], [20 min],
+   table.cell(colspan: 2, align: left)[Description: ]
+)
+]
 
+#block(breakable: false)[
+#table(
+  columns: (1fr, 1fr),
+  table.header(
+    table.cell(colspan: 2, align: center)[*is_part_of*]
+  ),
+  [ckan_default], [false],
+  [label], [Part Of],
+  [standard mapping],
+  [#link("https://schema.org/isPartOf")[schema:isPartOf]],
+  [field_type],[text],
+  [example], [Imaging Workshop],
+   table.cell(colspan: 2, align: left)[ Name of the Event or resource this resource is part of]
+)
+]
 
 #block(breakable: false)[
 #table(
@@ -896,7 +946,9 @@ CKAN Fields:
   ),
   [ckan_default], [false],
   [label], [Archived At],
-  [standard mapping], [schema:archivedAT],
+  [standard mapping], [
+    #link("https://schema.org/archivedAt")[schema:archivedAT]
+  ],
   [example], [],
    table.cell(colspan: 2, align: left)[Description: URL for permanent archival of resource]
 )
@@ -914,7 +966,7 @@ CKAN Fields:
   [standard mapping], [
     #link("https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/creator/")[dc:creator]
   ],
-  [field_type],[multiple_text],
+  [field_type],[text_multiple],
   [example], [],
    table.cell(colspan: 2, align: left)[Description: ]
 )
@@ -929,6 +981,7 @@ CKAN Fields:
   [ckan_default], [false],
   [label], [Date Published],
   [standard mapping], [#link("https://schema.org/datePublished")[schema:datePublished]],
+  [field_type],[date],
   [example], [2012],
    table.cell(colspan: 2, align: left)[Description: ]
 )
